@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dimensionamento de eixos · EngMec</title>
+    <meta name="description" content="Cálculos e consultas para engenharia mecânica.">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <div class="shell">
+      <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+      <header class="header">
+        <div class="header__start">
+          <button class="header__menu" type="button" aria-expanded="false" aria-controls="menu-lateral">
+            <span class="header__menu-icon" data-icon="menu" data-icon-size="22"></span>
+            <span class="sr-only">Abrir menu</span>
+          </button>
+          <a class="logo" href="/" aria-label="EngMec, página inicial">
+            <span class="logo__mark" data-icon="gear" data-icon-size="26" data-icon-stroke="1.9"></span>
+            <span class="logo__word">engmec</span>
+          </a>
+        </div>
+        <div class="header__identity">
+          <p class="header__discipline">Engenharia Mecânica</p>
+          <span class="header__badge" aria-hidden="true">EM</span>
+        </div>
+      </header>
+
+      <div class="shell__body">
+        <nav id="menu-lateral" class="sidebar" aria-label="Seções do EngMec">
+          <ul class="sidebar__list" data-sidebar-list></ul>
+          <template id="sidebar-group">
+            <li class="group">
+              <button class="group__button" type="button" aria-expanded="false">
+                <span class="group__icon" data-icon-size="18"></span>
+                <span class="group__label"></span>
+                <span class="group__chevron" data-icon="chevron-down" data-icon-size="16"></span>
+              </button>
+              <div class="submenu" inert>
+                <div class="submenu__inner">
+                  <ul class="submenu__list"></ul>
+                </div>
+              </div>
+            </li>
+          </template>
+          <template id="sidebar-module">
+            <li>
+              <a class="sublink"></a>
+            </li>
+          </template>
+        </nav>
+        <div id="main-scroll" class="shell__main">
+          <main id="conteudo" class="shell__content" tabindex="-1">
+            <article class="page">
+              <header class="intro">
+                <nav aria-label="Trilha de navegação">
+                  <ol class="crumbs">
+                    <li class="crumbs__item">
+                      <a class="crumbs__link" href="/">Início</a>
+                      <span class="crumbs__separator" data-icon="chevron-right" data-icon-size="14"></span>
+                    </li>
+                    <li class="crumbs__item">
+                      <a class="crumbs__link" href="/calculos/">Cálculos</a>
+                      <span class="crumbs__separator" data-icon="chevron-right" data-icon-size="14"></span>
+                    </li>
+                    <li class="crumbs__item">
+                      <span class="crumbs__current" aria-current="page">Dimensionamento de eixos</span>
+                    </li>
+                  </ol>
+                </nav>
+                <h1 class="intro__title">Dimensionamento de eixos</h1>
+                <p class="intro__description">Calcule diâmetros de eixos sob torção e flexão.</p>
+                <span class="intro__accent" aria-hidden="true"></span>
+              </header>
+
+              <section class="metric-grid" aria-label="Resumo do módulo">
+                <div class="metric-card"><h2>Entradas</h2><p>—</p></div>
+                <div class="metric-card"><h2>Resultados</h2><p>—</p></div>
+                <div class="metric-card"><h2>Histórico</h2><p>—</p></div>
+              </section>
+
+              <section class="workspace" aria-labelledby="tabela-eixos">
+                <h2 id="tabela-eixos">Casos de dimensionamento</h2>
+                <p class="workspace__status" data-shaft-status>Carregando tabela...</p>
+                <div class="data-table-wrap" data-shaft-table hidden>
+                  <table class="data-table">
+                    <caption class="sr-only">Casos fictícios de dimensionamento de eixos</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">Eixo</th>
+                        <th scope="col">Material</th>
+                        <th scope="col">Torque (N·m)</th>
+                        <th scope="col">Momento (N·m)</th>
+                        <th scope="col">Diâmetro (mm)</th>
+                        <th scope="col">Situação</th>
+                      </tr>
+                    </thead>
+                    <tbody data-shaft-rows></tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section class="workspace" aria-labelledby="calculadora-soma">
+                <h2 id="calculadora-soma">Calculadora</h2>
+                <p>Informe dois números para obter a soma calculada no servidor.</p>
+                <form class="calculator" data-sum-form>
+                  <label class="field">
+                    <span>Número A</span>
+                    <input name="a" type="number" step="any" inputmode="decimal" required>
+                  </label>
+                  <label class="field">
+                    <span>Número B</span>
+                    <input name="b" type="number" step="any" inputmode="decimal" required>
+                  </label>
+                  <button class="home-button" type="submit">Somar</button>
+                  <p class="sum-result" data-sum-result aria-live="polite"></p>
+                </form>
+              </section>
+            </article>
+          </main>
+          <footer class="footer">
+            <p>© <span data-year></span> EngMec</p>
+            <p>Engenharia mecânica aplicada</p>
+          </footer>
+        </div>
+      </div>
+
+      <button class="backdrop" type="button" hidden aria-label="Fechar menu"></button>
+    </div>
+
+    <script src="/js/icons.js"></script>
+    <script src="/js/navigation.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/shell.js"></script>
+    <script src="/calculos/dimensionamento-de-eixos.js"></script>
+  </body>
+</html>
